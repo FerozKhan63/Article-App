@@ -1,0 +1,19 @@
+<p>
+    <div class="card" style="width: 18rem;", id="deleteStudent<%= comment.id %>">
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h6 class = "text-primary"><%= comment.name %><h6></li>
+            <li class="list-group-item"><%= comment.body %></li>
+            <%#= link_to "Delete" , commentable_type_check(@commentable ,comment), method: :delete, data: { confirm: "Are you sure you want to delete this comment?"} %>
+            <li class = "list-group-item">
+                <%# byebug%> 
+                <%= link_to "Edit" ,[:edit,commentable ,comment] ,class: "btn btn-success edit", id:  "editC" , remote: true %> 
+                    &nbsp
+                <%= link_to "Delete" ,[commentable ,comment], method: :delete, remote: true, data: { confirm: "Are you sure you want to delete this comment?", remote: true}, class: "btn btn-danger delete" %>
+            </li>
+
+
+            
+        </ul>
+    </div>
+</p>

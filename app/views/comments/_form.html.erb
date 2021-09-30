@@ -1,0 +1,18 @@
+
+<%= form_with model: [commentable, Comment.new], local: false do |form| %>
+    
+    <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </p>
+    <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>  
+    </p> 
+
+    <p>
+        <%= form.submit "Add Comment", class: "btn btn-success" %>
+        <%# <%= link_to "Add Comment" ,[:new, @commentable, :comment] %>
+    </p>
+    
+<% end %>

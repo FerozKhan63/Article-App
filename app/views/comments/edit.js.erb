@@ -1,0 +1,6 @@
+$('.edit').bind('ajax:success', function() {
+    
+    $(this).parents().eq(1).html("").append("<%= j render 'form', commentable: @commentable %>")
+});
+
+

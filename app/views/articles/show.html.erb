@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @article.body %>
+</p>
+
+<br>
+
+<h6> <%= @article.comments.count%> Comments</h6>
+
+<div id="all-comments">
+  <h6><%= render @article.comments , commentable: @article  %></h6>
+</div>
+
+<br>
+
+<h6>Add a comment</h6>
+
+<button id = 'new-comment', class = "btn btn-success"> New Comment+ </button>
+
+<br>
+
+<div id="addC" style = "display:none" >
+    <%= render 'comments/form', commentable: @article %>
+</div>
+
+<br>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

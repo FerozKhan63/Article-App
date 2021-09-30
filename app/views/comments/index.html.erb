@@ -1,0 +1,12 @@
+<h5>Comments</h5>
+
+<div id="comments">
+<% @comments.each do |comment|%>
+    <div class = "comment">
+        <%= comment.name %>
+        <%= comment.body %>
+    </div>
+<%end%>
+</div>
+
+<%# <%= link_to "New Comment", [ @commentable, :comment]%>

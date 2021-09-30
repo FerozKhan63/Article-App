@@ -1,0 +1,4 @@
+$("#all-comments").html("");
+$("#all-comments").append("<%= j  render @commentable.comments , commentable: @commentable %>");
+$("#comment_name").val(""); 
+$("#comment_body").val(""); 

@@ -1,0 +1,4 @@
+console.log("#article_<%= @article.id %>");
+$("#article_<%= @article.id %>").fadeOut(500,()=>{
+   $(this).remove(); 
+})

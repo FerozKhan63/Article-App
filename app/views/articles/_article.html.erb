@@ -1,0 +1,7 @@
+<tr id="article_<%= article.id %>">
+          <td><%= article.title %></td>
+          <td><%= truncate(article.body, :lenght => 45) %></td>
+          <td><%= link_to 'Show', article ,class: "btn btn-outline-primary" %></td>
+          <td   id = "edit-article"><%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-success", remote: true %></td>
+          <td><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?', remote: true }, class:"btn btn-outline-danger"%></td>
+ </tr>

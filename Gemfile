@@ -26,8 +26,11 @@ gem 'devise'
 gem 'mail'
 
 gem 'kaminari'
+
+gem 'cocoon'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'activeadmin', '~> 2.6', '>= 2.6.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

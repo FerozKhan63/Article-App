@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArticlesController < AdminController
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles or /articles.json
@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1 or /articles/1.json
   def show
     @article = Article.find(params[:id])
+   
     #comment
     respond_to do |format|
       format.js
@@ -19,6 +20,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+   
     respond_to do |format|
       format.js
       format.html 
@@ -27,7 +29,6 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
-
     respond_to do |format|
       format.js
       format.html

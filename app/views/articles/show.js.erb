@@ -1,3 +1,4 @@
-$("#new-comment").on('click',function(){
-    $("#addC").fadeToggle();
-  });
+<%# $("#new-comment").on('click',function(){
+    $("#addC").fadeIn();
+  }); %>
+  $('#new-comment a').hide().parent().append("<%= j render 'comments/form', commentable: @article %>")

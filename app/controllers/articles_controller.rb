@@ -3,12 +3,12 @@ class ArticlesController < AdminController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.order("title").page(params[:page]).per(7)
+    @articles = current_user.articles.order("title").page(params[:page]).per(7)
   end
 
   # GET /articles/1 or /articles/1.json
   def show
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
    
     #comment
     respond_to do |format|
@@ -19,7 +19,7 @@ class ArticlesController < AdminController
 
   # GET /articles/new
   def new
-    @article = Article.new
+    @article = current_user.articles.new
    
     respond_to do |format|
       format.js
@@ -37,7 +37,7 @@ class ArticlesController < AdminController
 
   # POST /articles or /articles.json
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.create(article_params)
 
     respond_to do |format|
       if @article.save
@@ -54,8 +54,6 @@ class ArticlesController < AdminController
 
   # PATCH/PUT /articles/1 or /articles/1.json
   def update
-    @articles = Article.all
-    @article = Article.find(params[:id])
     respond_to do |format|
       if @article.update(article_params)
         format.js
@@ -82,7 +80,7 @@ class ArticlesController < AdminController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = current_user.articles.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
